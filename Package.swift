@@ -18,6 +18,7 @@ let package = Package(
             targets: [
                 "RxSwift",
                 "RxRelay",
+                "RxCocoaRuntime",
                 "RxCocoa"
             ]
         ),
@@ -45,6 +46,8 @@ let package = Package(
     targets: [
         .binaryTarget(name: "RxBlocking",
                       path: "Frameworks/RxBlocking.xcframework"),
+        .binaryTarget(name: "RxCocoaRuntime",
+                      path: "Frameworks/RxCocoaRuntime.xcframework"),
         .binaryTarget(name: "RxCocoa",
                       path: "Frameworks/RxCocoa.xcframework"),
         .binaryTarget(name: "RxRelay",
