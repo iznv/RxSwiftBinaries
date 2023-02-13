@@ -8,24 +8,39 @@ let package = Package(
     products: [
         .library(
             name: "RxBlocking",
-            targets: ["RxBlocking"]
+            targets: [
+                "RxSwift",
+                "RxBlocking"
+            ]
         ),
         .library(
             name: "RxCocoa",
-            targets: ["RxCocoa"]
+            targets: [
+                "RxSwift",
+                "RxRelay",
+                "RxCocoa"
+            ]
         ),
         .library(
             name: "RxRelay",
-            targets: ["RxRelay"]
+            targets: [
+                "RxSwift",
+                "RxRelay"
+            ]
         ),
         .library(
             name: "RxSwift",
-            targets: ["RxSwift"]
+            targets: [
+                "RxSwift"
+            ]
         ),
         .library(
             name: "RxTest",
-            targets: ["RxTest"]
-        )
+            targets: [
+                "RxSwift",
+                "RxTest"
+            ]
+        ),
     ],
     targets: [
         .binaryTarget(name: "RxBlocking",
@@ -37,6 +52,6 @@ let package = Package(
         .binaryTarget(name: "RxSwift",
                       path: "Frameworks/RxSwift.xcframework"),
         .binaryTarget(name: "RxTest",
-                      path: "Frameworks/RxTest.xcframework")
+                      path: "Frameworks/RxTest.xcframework"),
     ]
 )
