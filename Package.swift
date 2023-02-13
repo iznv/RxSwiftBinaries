@@ -6,23 +6,37 @@ import PackageDescription
 let package = Package(
     name: "RxSwiftBinaries",
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "RxSwiftBinaries",
-            targets: ["RxSwiftBinaries"]),
-    ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+            name: "RxBlocking",
+            targets: ["RxBlocking"]
+        ),
+        .library(
+            name: "RxCocoa",
+            targets: ["RxCocoa"]
+        ),
+        .library(
+            name: "RxRelay",
+            targets: ["RxRelay"]
+        ),
+        .library(
+            name: "RxSwift",
+            targets: ["RxSwift"]
+        ),
+        .library(
+            name: "RxTest",
+            targets: ["RxTest"]
+        )
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "RxSwiftBinaries",
-            dependencies: []),
-        .testTarget(
-            name: "RxSwiftBinariesTests",
-            dependencies: ["RxSwiftBinaries"]),
+        .binaryTarget(name: "RxBlocking",
+                      path: "Frameworks/RxBlocking.xcframework"),
+        .binaryTarget(name: "RxCocoa",
+                      path: "Frameworks/RxCocoa.xcframework"),
+        .binaryTarget(name: "RxRelay",
+                      path: "Frameworks/RxRelay.xcframework"),
+        .binaryTarget(name: "RxSwift",
+                      path: "Frameworks/RxSwift.xcframework"),
+        .binaryTarget(name: "RxTest",
+                      path: "Frameworks/RxTest.xcframework")
     ]
 )
